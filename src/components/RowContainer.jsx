@@ -67,7 +67,9 @@ const RowContainer = ({flag, data, scrollValue}) => {
                        <p className='text-lg text-headingColor font-semibold'>
                            <span className='text-sm text-green-500'>#</span> {item?.price}
                        </p>
-   
+                       <p className='text-lg text-headingColor font-semibold'>
+                           <span className='text-sm text-green-500'></span> {item?.size}
+                       </p>
                    </div>
                </div>
            </div>

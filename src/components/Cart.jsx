@@ -6,7 +6,7 @@ import { useStateValue } from '../context/StateProvider'
 import { actionType } from '../context/reducer'
 import emptyCart from "../img/undraw_empty_cart_co35.svg"
 import CartItem from './CartItem'
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, signInWithRedirect, GoogleAuthProvider, onAuthStateChanged } from "firebase/auth";
 import {app} from '../firebase.config'
 
 const Cart = () => {
@@ -16,6 +16,8 @@ const Cart = () => {
   const [{cartShow, cartItems, user}, dispatch] = useStateValue()
   const [tot, setTot] = useState(0)
   const [flag, setFlag] = useState(1)
+  const [users, setUsers] = useState({})
+  const [width, setWidth] = useState(window.innerWidth);
   const showCart = () => {
     dispatch({
       type: actionType.SET_CART_SHOW,
@@ -47,6 +49,37 @@ const Cart = () => {
      localStorage.setItem('user', JSON.stringify(providerData[0]))
     }
  }
+
+ 
+ const mobileLogin = async () =>{
+  if(!users){
+   const {users : {refreshToken, providerData}} = 
+   await signInWithRedirect(firebaseAuth, provider)
+   dispatch ({
+       type: actionType.SET_USER,
+       users: providerData[0],
+   })
+   localStorage.setItem('user', JSON.stringify(providerData[0]))
+  }
+ }
+ useEffect(() => {
+  const unsubscribe = onAuthStateChanged(firebaseAuth, (provider) => {
+    setUsers(provider)
+    console.log('Users', provider);
+  })
+  return () => {
+    unsubscribe()
+  }
+}, [])
+ useEffect(() => {
+   const handleResize = () => setWidth(window.innerWidth);
+   window.addEventListener('resize', handleResize);
+   return () => {
+     window.removeEventListener('resize', handleResize);
+   };
+ }, []);
+
+
   return (
     <motion.div 
     initial={{opacity: 0, x:200}}
@@ -114,6 +147,7 @@ const Cart = () => {
                   Check Out
                 </motion.button>
               ): (
+                width > 600 ? 
                 <motion.button 
                 whileTap={{scale: 0.8}}
                 type="button"
@@ -121,7 +155,15 @@ const Cart = () => {
                 to-green-600 text-gray-50 text-lg my-2 hover:shadow-lg"
                 onClick={login}>
                   Login to checkout
-                </motion.button>
+                </motion.button> 
+                :   <motion.button 
+                whileTap={{scale: 0.8}}
+                type="button"
+                className="w-full p-2 rounded-full bg-gradient-to-tr from-green-400 
+                to-green-600 text-gray-50 text-lg my-2 hover:shadow-lg"
+                onClick={mobileLogin}>
+                  Login to checkout
+                </motion.button> 
               )
              }
             </div>
@@ -139,5 +181,6 @@ const Cart = () => {
     </motion.div>
   )
 }
+
 
 export default Cart

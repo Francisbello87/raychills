@@ -14,6 +14,17 @@ const CartItem = ({item, setFlag, flag}) => {
     const [{user, cartItems}, dispatch] = useStateValue()
     // const [items, setItems] = useState([])
 
+    const handleDelete = (key) =>{
+      const index = cartItems.findIndex(item => item.id === key)
+      if(index !== -1){
+        cartItems.splice(index, 1)
+        dispatch({
+          type: actionType.SET_CARTITEMS,
+          cartItems: {cartItems},
+        });
+      }
+      console.log("i am working");
+    }
     const cartDispatch = () => {
         localStorage.setItem("cartItems", JSON.stringify(items))
         dispatch({
@@ -86,7 +97,7 @@ const CartItem = ({item, setFlag, flag}) => {
                   </motion.div>
                 </div>
                 <motion.div whileTap={{scale: 0.8}} className='mt-2 text-red-100 cursor-pointer text-xl'>
-                    <RiDeleteBin6Fill />
+                    <RiDeleteBin6Fill onClick={() => handleDelete(item.id)}/>
                 </motion.div>
                 
                 </div>
