@@ -1,6 +1,5 @@
 {
   "name": "raychills",
-  
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,13 +13,13 @@
     "react-icons": "^4.6.0",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
+    "react-social-icons": "^5.15.0",
     "react-whatsapp": "^0.3.0",
     "tailwind-scrollbar": "^2.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-   
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

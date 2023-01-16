@@ -15,14 +15,14 @@ const CartItem = ({item, setFlag, flag}) => {
     // const [items, setItems] = useState([])
 
     const handleDelete = (key) =>{
-      const index = cartItems.findIndex(item => item.id === key)
-      if(index !== -1){
-        cartItems.splice(index, 1)
-        dispatch({
-          type: actionType.SET_CARTITEMS,
-          cartItems: {cartItems},
-        });
-      }
+      // const index = cartItems.findIndex(item => item.id === key)
+      // if(index !== -1){
+      //   cartItems.splice(index, 1)
+      //   dispatch({
+      //     type: actionType.SET_CARTITEMS,
+      //     cartItems: {cartItems},
+      //   });
+      // }
       console.log("i am working");
     }
     const cartDispatch = () => {

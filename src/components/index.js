@@ -7,3 +7,4 @@ export { default as RowContainer } from "./RowContainer";
 export { default as Menu } from "./OurMenu";
 export { default as Cart } from "./Cart";
 export { default as CartItem } from "./CartItem";
+export { default as Footer } from "./Footer";

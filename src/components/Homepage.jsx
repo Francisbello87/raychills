@@ -18,7 +18,7 @@ const Homepage = () => {
           </div>
         </div>
         <p className='text-[2.5rem] font-bold tracking-wide text-textColored   lg:text-[4.5rem] '>
-          The Fastest Delivery in  <span className='text-green-600 text-[3rem] lg:text-[5rem]'>Your City</span>
+          The Best Delights in  <span className='text-green-600 text-[3rem] lg:text-[5rem]'>Your City</span>
         </p>
         <p className='text-base text-textColor  md:w-[80%]'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
           Doloremque nulla ipsum neque deleniti cumque quasi quibusdam! 

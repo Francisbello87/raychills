@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { CreateContainer, Header, MainContainer } from "./components";
+import { CreateContainer, Footer, Header, MainContainer } from "./components";
 import { AnimatePresence } from "framer-motion";
 import { useStateValue } from "./context/StateProvider";
 import { getAllStoreCollections } from "./utils/firebaseFunctions";
@@ -22,7 +22,7 @@ const App = () => {
     fetchData();
   }, []);
   return (
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence mode="wait">
       <div className="w-screen h-auto flex flex-col bg-primary">
         <Header />
 
@@ -32,6 +32,7 @@ const App = () => {
             <Route path="/createItem" element={<CreateContainer />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </AnimatePresence>
   );

@@ -138,7 +138,7 @@ const Cart = () => {
                 <p className='text-gray-200 text-xl font-semibold'>#{tot + 500}</p>
               </div>
              {
-              user ? (
+              user || users ? (
                 <motion.button 
                 whileTap={{scale: 0.8}}
                 type="button"

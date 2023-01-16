@@ -92,8 +92,6 @@ const Header = () => {
                 <img src={Logo} alt="Logo" className='w-20 rounded-full' />
                 <p className='text-sm text-lighttextGray hover:text-headingColor ml-2'>Yoghurt, Smoothies, Yogo Fura, Juices</p>
                 </motion.div>
-              
-                
             </Link>
           <div className="flex items-center gap-8">
           <motion.ul 
@@ -138,8 +136,6 @@ const Header = () => {
                   </div>
                 )}
             </div>
-           
-           
           </div>
         </div> : 
         
