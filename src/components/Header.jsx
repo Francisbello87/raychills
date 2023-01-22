@@ -99,9 +99,21 @@ const Header = () => {
           animate={{opacity: 1, x:0}} 
          exit={{opacity: 0, x:200}} 
           className='flex items-center gap-8 '>
-                <motion.li whileTap={{scale: 0.6}}  className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>Home</motion.li>
-                <motion.li whileTap={{scale: 0.6}}  className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>About Us</motion.li>
-                <motion.li whileTap={{scale: 0.6}}  className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'><Link to="ourmenu">Menu</Link></motion.li>
+                <Link to={'/'}>
+                  <motion.li whileTap={{scale: 0.6}}  
+                    className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>
+                    Home
+                  </motion.li>
+                </Link>
+                <Link to={'/about'}>
+                  <motion.li whileTap={{scale: 0.6}}  
+                    className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>
+                    About Us
+                  </motion.li>
+                </Link>
+                <motion.li whileTap={{scale: 0.6}}  className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer'>
+                  <Link to={'/contact'}>
+                  Contact</Link></motion.li>
             </motion.ul>
             <div className='relative'>
                 <motion.img whileTap={{scale: 0.6}} 
@@ -171,8 +183,20 @@ const Header = () => {
                 }
                    <ul 
                 className='flex flex-col'>
-                  <Link to={'/'}><motion.li whileTap={{scale: 0.6}}  className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer  hover:bg-slate-100 px-4 py-2' onClick={() => setIsMenu(false)}>Home</motion.li></Link>
-                <motion.li whileTap={{scale: 0.6}}  className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer  hover:bg-slate-100 px-4 py-2' onClick={() => setIsMenu(false)}>About Us</motion.li>
+                  <Link to={'/'}>
+                    <motion.li whileTap={{scale: 0.6}}  
+                      className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer  hover:bg-slate-100 px-4 py-2' 
+                      onClick={() => setIsMenu(false)}>
+                      Home
+                    </motion.li>
+                  </Link>
+                  <Link to={'/about'}>
+                    <motion.li whileTap={{scale: 0.6}}  
+                      className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer  hover:bg-slate-100 px-4 py-2' 
+                      onClick={() => setIsMenu(false)}>
+                      About Us
+                    </motion.li>
+                  </Link>
                 <motion.li whileTap={{scale: 0.6}}  className='text-base text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer  hover:bg-slate-100 px-4 py-2' onClick={() => setIsMenu(false)}>Menu</motion.li>
             </ul>
                 <p className='m-2 p-2 rounded-md shadow-md bg-gray-300 flex items-center justify-center gap-3 cursor-pointer hover:bg-gray-300 transition-all duration-100 ease-in-out  text-textColor text-base' onClick={logout}>Logout <MdLogout/></p>

@@ -143,7 +143,13 @@ const Cart = () => {
                 whileTap={{scale: 0.8}}
                 type="button"
                 className="w-full p-2 rounded-full bg-gradient-to-tr from-green-400 
-                to-green-600 text-gray-50 text-lg my-2 hover:shadow-lg">
+                to-green-600 text-gray-50 text-lg my-2 hover:shadow-lg"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href=`${'/confirmation'}`;
+                  clearCart()
+                  }}
+                >
                   Check Out
                 </motion.button>
               ): (

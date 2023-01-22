@@ -1,6 +1,13 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
-import { CreateContainer, Footer, Header, MainContainer } from "./components";
+import { Route, Routes, useLocation } from "react-router-dom";
+import {
+  About,
+  AnimatedRoutes,
+  CreateContainer,
+  Footer,
+  Header,
+  MainContainer,
+} from "./components";
 import { AnimatePresence } from "framer-motion";
 import { useStateValue } from "./context/StateProvider";
 import { getAllStoreCollections } from "./utils/firebaseFunctions";
@@ -27,10 +34,7 @@ const App = () => {
         <Header />
 
         <main className="mt-14 md:mt-24 px-4 md:px-16 py-8 w-full">
-          <Routes>
-            <Route path="/*" element={<MainContainer />} />
-            <Route path="/createItem" element={<CreateContainer />} />
-          </Routes>
+          <AnimatedRoutes />
         </main>
         <Footer />
       </div>

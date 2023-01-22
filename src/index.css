@@ -14,6 +14,10 @@ html,
 body {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  overflow-y: scroll;
+}
+html::-webkit-scrollbar {
+  display: none;
 }
 @tailwind base;
 @tailwind components;

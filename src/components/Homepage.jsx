@@ -2,6 +2,7 @@ import React from 'react'
 import Delivery from '../img/delivery.svg'
 import HeroBg from '../img/heroBg.png'
 import {heroData} from '../utils/data'
+import { motion } from 'framer-motion'
 
 
 const Homepage = () => {
@@ -17,20 +18,25 @@ const Homepage = () => {
             />
           </div>
         </div>
-        <p className='text-[2.5rem] font-bold tracking-wide text-textColored   lg:text-[4.5rem] '>
+        <h1 className='text-[2.5rem] font-bold tracking-wide text-textColored   lg:text-[4.5rem] '>
           The Best Delights in  <span className='text-green-600 text-[3rem] lg:text-[5rem]'>Your City</span>
-        </p>
+        </h1>
         <p className='text-base text-textColor  md:w-[80%]'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
           Doloremque nulla ipsum neque deleniti cumque quasi quibusdam! 
           Corporis corrupti illo veritatis neque. 
           Rerum sunt dolorem eveniet?
         </p>
-        <button type='button' 
+        <motion.button type='button'
+          whileTap={{scale: 0.6}}
           className='bg-gradient-to-br from-green-400 to-green-500 
           w-full md:w-auto px-4 py-2 rounded-lg hover:shadow-lg 
-          transition-all ease-in-out duration-100'>
+          transition-all ease-in-out duration-100'
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.href=`${'/contact'}`;
+            }}>
           Order Now
-        </button>
+        </motion.button>
       </div>
       <div className="py-1 flex-1 items-center mt-6 relative">
         <img src={HeroBg} alt="Hero-bg" 

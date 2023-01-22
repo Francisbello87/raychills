@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 const Footer = () => {
   return (
-    <footer className='  -mb-6 w-screen bg-green-500 p-3 px-4 md:p-6 md:px-16'>
+    <footer className='   w-screen bg-green-500 p-3 px-4 md:p-6 md:px-16'>
         <div className='md:flex w-full py-3 h-full items-center 
         justify-center  bg-primary drop-shadow-lg rounded-md'>
             <div className='flex items-center flex-col md:flex-row md:justify-between gap-8 px-4'>

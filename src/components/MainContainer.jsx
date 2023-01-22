@@ -14,7 +14,12 @@ const MainContainer = () => {
  useEffect(() => {}, [scrollValue, cartShow])
 
   return (
-    <div className='w-full h-auto flex-cols items-center'>
+    <motion.div 
+    className='w-full h-auto flex-cols items-center'
+    initial={{width: 0}}
+    animate={{width: "100%"}}
+    exit={{x: window.innerWidth, transition: {duration: 0.2}}}
+    >
       <Homepage/>
 
       {/* <section className='w-full my-6 '>
@@ -47,7 +52,7 @@ const MainContainer = () => {
       {cartShow && (
         <Cart/>
       )}
-    </div>
+    </motion.div>
   )
 }
 

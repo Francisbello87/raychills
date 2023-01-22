@@ -135,7 +135,11 @@ const fetchData = async () => {
 };
 
   return (
-    <div className='w-full h-auto min-h-screen flex items-center justify-center'>
+    <motion.div 
+    initial={{width: 0}}
+    animate={{width: "100%"}}
+    exit={{x: window.innerWidth, transition: {duration: 0.2}}}
+    className='w-full h-auto min-h-screen flex items-center justify-center'>
       <div className='w-[90%] md:w-[75%] border border-gray-300 
       rounded-lg p-4 flex flex-col items-center justify-center gap-4'
       >
@@ -259,7 +263,7 @@ const fetchData = async () => {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

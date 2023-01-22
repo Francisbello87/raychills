@@ -8,3 +8,7 @@ export { default as Menu } from "./OurMenu";
 export { default as Cart } from "./Cart";
 export { default as CartItem } from "./CartItem";
 export { default as Footer } from "./Footer";
+export { default as About } from "./About";
+export { default as AnimatedRoutes } from "./AnimatedRoutes";
+export { default as Confirmation } from "./Confirmation";
+export { default as Contact } from "./Contact";
