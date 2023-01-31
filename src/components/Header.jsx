@@ -131,7 +131,7 @@ const Header = () => {
                 exit={{opacity: 0, scale:0.6}} 
                 className="w-40 bg-gray-200  shadow-xl rounded-lg flex flex-col absolute top-12 -right-14 mt-3">
                 {
-                  user && user.email === "bellofrancis91@gmail.com" && (
+                  user && (users.email === "bellofrancis91@gmail.com" || "ajadirasheedat@gmail.com") && (
                     <Link to={"/createItem"}><p className='px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}>New Item <MdAdd/></p></Link>
                   )
                 }
@@ -177,7 +177,7 @@ const Header = () => {
                 exit={{opacity: 0, scale:0.6}} 
                 className="w-40 bg-gray-200  shadow-xl rounded-lg flex flex-col absolute top-12 -right-12 mt-3">
                 {
-                  users && users.email === "bellofrancis91@gmail.com" && (
+                  users && (users.email === "bellofrancis91@gmail.com" || "ajadirasheedat@gmail.com") && (
                     <Link to={"/createItem"}><p className='px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base' onClick={() => setIsMenu(false)}>New Item <MdAdd/></p></Link>
                   )
                 }
